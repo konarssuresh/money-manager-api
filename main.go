@@ -30,6 +30,13 @@ func main() {
 		port = ":8080" // Default to 8080 if the environment variable is not set
 	}
 
+	envVariables := os.Environ()
+
+	fmt.Println("List of Environment Variables:")
+	for _, env := range envVariables {
+		fmt.Println(env)
+	}
+
 	er := http.ListenAndServe(port, router.Router)
 
 	if er != nil {
