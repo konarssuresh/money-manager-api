@@ -25,6 +25,11 @@ func main() {
 
 	router.InitializeRouter(handler)
 
-	log.Fatal(http.ListenAndServe(os.Getenv("PORT"), router.Router))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = ":8080" // Default to 8080 if the environment variable is not set
+	}
+
+	log.Fatal(http.ListenAndServe(port, router.Router))
 
 }
