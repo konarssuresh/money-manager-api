@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"money-manager/db"
 	"money-manager/router"
@@ -14,6 +15,7 @@ func main() {
 	err := godotenv.Load()
 
 	if err != nil {
+		fmt.Println(err)
 		log.Fatal("Error loading environment variables")
 	}
 
