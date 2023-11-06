@@ -25,7 +25,7 @@ func main() {
 
 	router.InitializeRouter(handler)
 
-	port := os.Getenv("PORT")
+	port := os.Getenv("HOST_PORT")
 	if port == "" {
 		port = ":8080" // Default to 8080 if the environment variable is not set
 	}
